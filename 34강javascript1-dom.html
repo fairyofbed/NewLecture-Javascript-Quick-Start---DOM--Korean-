@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page Title</title>
+    <script src="34강javascript1-dom.js"></script>
+</head>
+<body>
+    <!-- Ex 7-3 : 노드 복제와 템플릿 태그 -->
+    <section id="section7-3">
+        <h1>Ex 7-3 : 노드 복제와 템플릿 태그</h1>
+        <p style="color: red;">
+            반복문을 사용해서
+            notice 객체에 있는 맴버 객체들을 탬플릿에다가 띄워줘야 하는 것인가?
+        </p>
+        <div>
+            <input type="button" class="clone-button" value="복제">
+            <input type="button" class="template-button" value="템플릿 복제">
+        </div>
+        <template>
+            <tr>
+                <td></td>
+                <td><a href=""></a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </template>
+        <table border="1" class="notice-list">
+            <thead>
+                <tr>
+                    <td>번호</td>
+                    <td>제목</td>
+                    <td>작성일</td>
+                    <td>작성자</td>
+                    <td>조회수</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>1</td>
+                    <td><a href="1">자바스크립트란..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="2">유투브에 끌려다니지 않으려고 했는데....ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr>
+                <tr>                        
+                    <td>3</td>
+                    <td><a href="3">기본기가 튼튼해야....</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="4">근데 조회수가 ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </section>
+    <hr />
+
+    <!-- Ex 7-2 : 노드 복제와 템플릿 태그 -->
+    <section id="section7-2">
+        <h1>Ex 7-2 : 노드 복제와 템플릿 태그</h1>
+        <p style="color: red;">
+            "템플릿 복제" 버튼을 클릭해보자
+        </p>
+        <div>
+            <input type="button" class="clone-button" value="복제">
+            <input type="button" class="template-button" value="템플릿 복제">
+        </div>
+        <template>
+            <tr>
+                <td></td>
+                <td><a href=""></a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </template>
+        <table border="1" class="notice-list">
+            <thead>
+                <tr>
+                    <td>번호</td>
+                    <td>제목</td>
+                    <td>작성일</td>
+                    <td>작성자</td>
+                    <td>조회수</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>1</td>
+                    <td><a href="1">자바스크립트란..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="2">유투브에 끌려다니지 않으려고 했는데....ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr>
+                <tr>                        
+                    <td>3</td>
+                    <td><a href="3">기본기가 튼튼해야....</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="4">근데 조회수가 ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </section>
+    <hr />
+
+    <!-- Ex 7-1 : 노드 복제와 템플릿 태그 -->
+    <section id="section7-1">
+        <h1>Ex 7-1 : 노드 복제와 템플릿 태그</h1>
+        <p style="color: red;"> Ex 7-0 과는 다르게 notices 객체 안에 있는 맴버 객체들을 
+            복제 버튼을 클릭해서 탬플릿에 추가해보도록 하겠습니다.
+            하지만 복제에 대해서는 문제가 있습니다.
+            기존의 tr td 태그가 필요하기 때문입니다.
+        </p>
+        <div>
+            <input type="button" class="clone-button" value="복제">
+            <input type="button" class="template-button" value="템플릿 복제">
+        </div>
+        <table border="1" class="notice-list">
+            <thead>
+                <tr>
+                    <td>번호</td>
+                    <td>제목</td>
+                    <td>작성일</td>
+                    <td>작성자</td>
+                    <td>조회수</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 이 밑에 있는 tr태그들 주석 처리 해놓고선 
+                에러를 찾지 못했었다.
+                34강javascript1-dom.js:17 Uncaught TypeError: Cannot read property 'cloneNode' of null
+                at HTMLInputElement.cloneButton.onclick (34강javascript1-dom.js:17) -->
+                <tr>
+                    <td>1</td>
+                    <td><a href="1">자바스크립트란..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="2">유투브에 끌려다니지 않으려고 했는데....ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr>
+                <tr>                        
+                    <td>3</td>
+                    <td><a href="3">기본기가 튼튼해야....</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="4">근데 조회수가 ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <hr />
+
+    <!-- Ex 7-0 : 노드 복제와 템플릿 태그 -->
+    <section id="section7-0">
+        <h1>Ex 7-0 : 노드 복제와 템플릿 태그</h1>
+        <p style="color: red;">
+            '복제' 버튼을 클릭해보세요.
+        </p>
+        <div>
+            <input type="button" class="clone-button" value="복제">
+            <input type="button" class="template-button" value="템플릿 복제">
+        </div>
+        <table border="1" class="notice-list">
+            <thead>
+                <tr>
+                    <td>번호</td>
+                    <td>제목</td>
+                    <td>작성일</td>
+                    <td>작성자</td>
+                    <td>조회수</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="1">자바스크립트란..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="2">유투브에 끌려다니지 않으려고 했는데....ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr>
+                <tr>                        
+                    <td>3</td>
+                    <td><a href="3">기본기가 튼튼해야....</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="4">근데 조회수가 ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <hr />
+
+</body>
+</html>
